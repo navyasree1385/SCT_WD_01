@@ -1,0 +1,289 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#F8FAFC;
+    color:#1E293B;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:20px 80px;
+
+    transition:0.4s ease;
+    z-index:1000;
+}
+
+nav.scrolled{
+    background:#0F172A;
+    box-shadow:0 5px 20px rgba(0,0,0,0.15);
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:white;
+    letter-spacing:1px;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    position:relative;
+    transition:0.3s ease;
+}
+
+.nav-links a:hover{
+    color:#06B6D4;
+}
+
+.nav-links a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-5px;
+
+    width:0;
+    height:2px;
+
+    background:#06B6D4;
+    transition:0.3s;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero{
+    height:100vh;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+    padding:20px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #0F172A,
+        #1E3A8A,
+        #3B82F6
+    );
+
+    color:white;
+}
+
+.hero h1{
+    font-size:4.5rem;
+    font-weight:700;
+    margin-bottom:20px;
+    text-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+.hero p{
+    font-size:1.2rem;
+    max-width:700px;
+    line-height:1.8;
+    opacity:0.9;
+}
+
+/* Hero Button */
+.hero-btn{
+    margin-top:30px;
+    padding:14px 32px;
+
+    background:#06B6D4;
+    color:white;
+
+    border:none;
+    border-radius:50px;
+
+    text-decoration:none;
+    font-weight:600;
+
+    box-shadow:0 10px 25px rgba(6,182,212,0.3);
+
+    transition:0.3s ease;
+}
+
+.hero-btn:hover{
+    background:#0891B2;
+    transform:translateY(-3px);
+}
+
+/* =========================
+   CONTENT SECTIONS
+========================= */
+.content{
+    padding:100px 10%;
+}
+
+.content h2{
+    font-size:2.5rem;
+    color:#0F172A;
+    margin-bottom:20px;
+}
+
+.content p{
+    color:#475569;
+    line-height:1.8;
+}
+
+/* =========================
+   ABOUT SECTION
+========================= */
+#about{
+    background:#FFFFFF;
+}
+
+/* =========================
+   SERVICES SECTION
+========================= */
+#services{
+    background:#F1F5F9;
+}
+
+#services h2{
+    text-align:center;
+    font-size:2.8rem;
+    margin-bottom:15px;
+}
+
+#services > p{
+    text-align:center;
+    max-width:700px;
+    margin:0 auto 50px;
+    color:#64748B;
+}
+
+/* Service Cards */
+.card-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    margin-top:40px;
+}
+
+.card{
+    background:#FFFFFF;
+
+    padding:35px;
+
+    border-radius:18px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.08);
+
+    transition:all 0.3s ease;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+
+    box-shadow:
+    0 20px 40px rgba(59,130,246,0.15);
+}
+
+.card h3{
+    color:#2563EB;
+    margin-bottom:15px;
+    font-size:1.4rem;
+}
+
+.card p{
+    color:#475569;
+}
+
+/* =========================
+   CONTACT SECTION
+========================= */
+#contact{
+    background:#FFFFFF;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer{
+    background:#0F172A;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+@media(max-width:768px){
+
+    nav{
+        padding:15px 20px;
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .logo{
+        font-size:24px;
+    }
+
+    .nav-links{
+        gap:15px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .nav-links a{
+        font-size:15px;
+    }
+
+    .hero h1{
+        font-size:2.7rem;
+    }
+
+    .hero p{
+        font-size:1rem;
+    }
+
+    .content{
+        padding:70px 25px;
+    }
+
+    #services h2{
+        font-size:2rem;
+    }
+}
